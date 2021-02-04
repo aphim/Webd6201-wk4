@@ -98,9 +98,12 @@
       $("#fullName").on("blur", ()=>{
           if($("#fullName").val().length < 2)
           {
-            $("#fullName").trigger("focus").trigger("select");
-              
-            $("#messageArea").show().addClass("alert alert-danger").text("Please enter an appropriate Name");
+              fullName.focus();
+              fullName.select();
+
+              $("#messageArea").show();
+              $("#messageArea").addClass("alert alert-danger");
+              $("messageArea").text("Please enter an appropriate Name");
              
           }
           else

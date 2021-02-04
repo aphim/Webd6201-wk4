@@ -113,7 +113,7 @@
 
         $("#sendButton").on("click", (event)=>
         {
-          if ($("#subscribeCheckbox")[0].checked)
+          if ($("subscribeCheckbox")[0].checked)
           {
             let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
 
@@ -153,25 +153,14 @@
         </tr>`;
 
         }
+
         
 
         contactList.innerHTML = data;
 
-          //TODO - complete
-        $("button.edit").on("click", function ()
-        {
-          console.log($(this).val());
+        $("button.edit").on("click", function (){
+          console.log($(this)[0].data);
         });
-        //TODO - fix
-        $("button.delete").on("click", function ()
-        {
-         if (confirm("Are you sure?"))
-         {
-          localStorage.removeItem($(this).val());
-          location.href = "contact-list.html";
-         }
-        });
-
       }
     }
 

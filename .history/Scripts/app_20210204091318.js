@@ -110,19 +110,15 @@
           }
         });
 
-
-        $("#sendButton").on("click", (event)=>
+        $("#sendButton").on("click", ()=>
         {
-          if ($("#subscribeCheckbox")[0].checked)
-          {
-            let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
+            
+          let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
 
-            if(contact.serialize())
-            {
-              localStorage.setItem((localStorage.length + 1).toString(), contact.serialize());
-            }
+          if(contact.serialize())
+          {
+            localStorage.setItem((localStorage.length + 1).toString(), contact.serialize());
           }
-         
 
         });
 
@@ -148,30 +144,10 @@
           <td>${contact.FullName}</td>
           <td>${contact.ContactNumber}</td>
           <td>${contact.EmailAddress}</td>
-          <td class="text-center"><button value="${index + 1}" class="btn btn-primary btn-small edit"><i class="fas fa-edit fa-sm"></i>Edit</button></td>
-          <td class="text-center"><button value="${index + 1}" class="btn btn-danger btn-small delete"><i class="fas fa-trash-alt fa-sm"></i>Delete</button></td>
         </tr>`;
-
         }
-        
 
         contactList.innerHTML = data;
-
-          //TODO - complete
-        $("button.edit").on("click", function ()
-        {
-          console.log($(this).val());
-        });
-        //TODO - fix
-        $("button.delete").on("click", function ()
-        {
-         if (confirm("Are you sure?"))
-         {
-          localStorage.removeItem($(this).val());
-          location.href = "contact-list.html";
-         }
-        });
-
       }
     }
 

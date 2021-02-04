@@ -113,7 +113,7 @@
 
         $("#sendButton").on("click", (event)=>
         {
-          if ($("#subscribeCheckbox")[0].checked)
+          if ($("subscribeCheckbox").checked)
           {
             let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
 
@@ -157,12 +157,11 @@
 
         contactList.innerHTML = data;
 
-          //TODO - complete
         $("button.edit").on("click", function ()
         {
           console.log($(this).val());
         });
-        //TODO - fix
+
         $("button.delete").on("click", function ()
         {
          if (confirm("Are you sure?"))

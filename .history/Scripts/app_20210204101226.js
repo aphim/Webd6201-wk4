@@ -157,12 +157,11 @@
 
         contactList.innerHTML = data;
 
-          //TODO - complete
         $("button.edit").on("click", function ()
         {
           console.log($(this).val());
         });
-        //TODO - fix
+
         $("button.delete").on("click", function ()
         {
          if (confirm("Are you sure?"))
